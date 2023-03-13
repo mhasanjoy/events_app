@@ -1,10 +1,7 @@
-import styles from '@/styles/Home.module.css';
-import { Inter } from 'next/font/google';
 import Head from 'next/head';
+import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export default function Home() {
+export default function Home({ data }) {
     return (
         <>
             <Head>
@@ -20,15 +17,34 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <header>
-                <nav>
+                {/* <nav>
                     <img src="" alt="" />
                     <a href="/">Home</a>
                     <a href="/events">Events</a>
                     <a href="/about-us">About Us</a>
-                </nav>
+                </nav> */}
             </header>
-            <main className={styles.main}></main>
+            <main>
+                {data.map((eventCategory) => (
+                    <div key={eventCategory.id}>
+                        <Link href={`/events/${eventCategory.id}`}>
+                            {/* <Image src={eventCategory.image} alt='' width={100} height={100} /> */}
+                            {eventCategory.title}
+                        </Link>
+                    </div>
+                ))}
+            </main>
             <footer>&copy; {new Date().getFullYear()}</footer>
         </>
     );
+}
+
+export async function getStaticProps() {
+    const { events_categories } = await import('../../data/data.json');
+
+    return {
+        props: {
+            data: events_categories,
+        },
+    };
 }
