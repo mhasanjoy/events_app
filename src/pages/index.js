@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home({ data }) {
@@ -28,13 +29,19 @@ export default function Home({ data }) {
                 {data.map((eventCategory) => (
                     <div key={eventCategory.id}>
                         <Link href={`/events/${eventCategory.id}`}>
-                            {/* <Image src={eventCategory.image} alt='' width={100} height={100} /> */}
-                            {eventCategory.title}
+                            <Image
+                                src={eventCategory.image}
+                                alt={eventCategory.title}
+                                width={300}
+                                height={300}
+                            />
+                            <h2>{eventCategory.title}</h2>
+                            <p>{eventCategory.description}</p>
                         </Link>
                     </div>
                 ))}
             </main>
-            <footer>&copy; {new Date().getFullYear()}</footer>
+            {/* <footer>&copy; {new Date().getFullYear()}</footer> */}
         </>
     );
 }
