@@ -18,12 +18,11 @@ export default function Home({ data }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <header>
-                {/* <nav>
-                    <img src="" alt="" />
-                    <a href="/">Home</a>
-                    <a href="/events">Events</a>
-                    <a href="/about-us">About Us</a>
-                </nav> */}
+                <nav>
+                    <Link href="/">Home</Link>
+                    <Link href="/events">Events</Link>
+                    <Link href="/about-us">About Us</Link>
+                </nav>
             </header>
             <main>
                 {data.map((eventCategory) => (

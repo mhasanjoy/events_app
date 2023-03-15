@@ -9,6 +9,18 @@ const nextConfig = {
                 port: '',
                 pathname: '/photo-**',
             },
+            {
+                protocol: 'https',
+                hostname: 'hydeparkwinterwonderland.com',
+                port: '',
+                pathname: '/static/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'wembleypark.com',
+                port: '',
+                pathname: '/media/images/**',
+            },
         ],
     },
 };
