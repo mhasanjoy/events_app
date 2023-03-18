@@ -3,22 +3,28 @@ import Link from 'next/link';
 
 const HomePage = ({ eventsCategories }) => {
     return (
-        <main>
+        <div className="home-body">
             {eventsCategories.map((eventCategory) => (
-                <div key={eventCategory.id}>
-                    <Link href={`/events/${eventCategory.id}`}>
+                <Link
+                    href={`/events/${eventCategory.id}`}
+                    key={eventCategory.id}
+                    className="card"
+                >
+                    <div className="image">
                         <Image
                             src={eventCategory.image}
                             alt={eventCategory.title}
-                            width={300}
-                            height={300}
+                            width={600}
+                            height={400}
                         />
+                    </div>
+                    <div className="content">
                         <h2>{eventCategory.title}</h2>
                         <p>{eventCategory.description}</p>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
             ))}
-        </main>
+        </div>
     );
 };
 
