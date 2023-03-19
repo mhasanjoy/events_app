@@ -1,27 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import CategoryEvents from '@/components/events/categoryEvents';
 
-const EventCategory = ({ data }) => {
-    return (
-        <div>
-            {data.map((event) => (
-                <div key={event.id}>
-                    <Link
-                        href={`/events/${event.city.toLowerCase()}/${event.id}`}
-                    >
-                        <Image
-                            src={event.image}
-                            alt={event.title}
-                            width={300}
-                            height={300}
-                        />
-                        <h2>{event.title}</h2>
-                        <p>{event.description}</p>
-                    </Link>
-                </div>
-            ))}
-        </div>
-    );
+const EventCategory = ({ data, cityName }) => {
+    return <CategoryEvents data={data} cityName={cityName} />;
 };
 
 export default EventCategory;
@@ -37,6 +17,7 @@ export async function getStaticProps(context) {
     return {
         props: {
             data: events,
+            cityName: category,
         },
     };
 }

@@ -1,18 +1,7 @@
-import Image from 'next/image';
+import SingleEvent from '@/components/events/single-event';
 
 const Event = ({ event }) => {
-    return (
-        <div>
-            <Image
-                src={event.image}
-                alt={event.title}
-                width={1000}
-                height={500}
-            />
-            <h1>{event.title}</h1>
-            <p>{event.description}</p>
-        </div>
-    );
+    return <SingleEvent event={event} />;
 };
 
 export default Event;
