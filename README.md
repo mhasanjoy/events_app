@@ -12,4 +12,4 @@ Technologies:
 -   `Next.js`
 -   `Sass`
 
-## [Live Site](https://events-app-pi.vercel.app/)
+## [Live Site](https://events-app-mhasanjoy.vercel.app/)
