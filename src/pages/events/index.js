@@ -1,7 +1,7 @@
 import EventsPage from '@/components/events/events-page';
 
-const Events = ({ data }) => {
-    return <EventsPage data={data} />;
+const Events = ({ eventsCategories }) => {
+    return <EventsPage eventsCategories={eventsCategories} />;
 };
 
 export default Events;
@@ -11,7 +11,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            data: events_categories,
+            eventsCategories: events_categories,
         },
     };
 }

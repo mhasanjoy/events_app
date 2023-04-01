@@ -1,7 +1,7 @@
 import CategoryEvents from '@/components/events/categoryEvents';
 
-const EventCategory = ({ data, cityName }) => {
-    return <CategoryEvents data={data} cityName={cityName} />;
+const EventCategory = ({ events, city }) => {
+    return <CategoryEvents events={events} city={city} />;
 };
 
 export default EventCategory;
@@ -16,8 +16,8 @@ export async function getStaticProps(context) {
 
     return {
         props: {
-            data: events,
-            cityName: category,
+            events,
+            city: category,
         },
     };
 }

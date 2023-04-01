@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const EventsPage = ({ data }) => {
+const EventsPage = ({ eventsCategories }) => {
     return (
         <div className="events_page">
-            {data.map((eventCategory) => (
+            {eventsCategories.map((eventCategory) => (
                 <div key={eventCategory.id} className="card">
                     <Link href={`/events/${eventCategory.id}`}>
                         <Image
